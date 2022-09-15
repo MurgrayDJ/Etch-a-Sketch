@@ -12,10 +12,13 @@ div {
 .grid-container {
     height: 320px;
     width: 320px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
 .grid-cube {
-    height: 80px;
-    width: 80px;
+    min-height: 70px;
+    min-width: 70px;
+    flex: 1 0 auto;
 }
