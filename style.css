@@ -4,7 +4,8 @@ body {
     align-items: center;
 }
 
-div {
+.grid-container,
+.grid-square {
     border-style: solid;
     border-color:black;
     box-sizing: border-box;
@@ -26,4 +27,8 @@ div {
 .grid-square:hover {
     background-color: #FF91AF;
     border-color: #FF69B4;
+}
+
+.user-question{
+    padding-bottom: 25px;
 }
