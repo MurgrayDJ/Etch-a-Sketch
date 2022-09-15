@@ -20,3 +20,9 @@ function createGrid(){
 
 createGrid();
 
+// const gridSquares = document.querySelectorAll(".grid-square");
+// gridSquares.forEach(gridSquare => {
+//     gridSquare.addEventListener('mouseover', () => {
+//         gridSquare.classList.add()
+//     })
+// });

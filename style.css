@@ -22,3 +22,8 @@ div {
     height: 25%;
     width: 25%;
 }
+
+.grid-square:hover {
+    background-color: #FF91AF;
+    border-color: #FF69B4;
+}
