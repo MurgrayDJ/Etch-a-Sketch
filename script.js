@@ -4,11 +4,15 @@
 
 //Creates a grid container, then creates several grid squares to add to it.
 //Then appends the container with the squares inside to the body of the DOM
-function createGrid(){
-    const gridContainer = document.createElement('div');
-    gridContainer.classList.add('grid-container');
+function createGrid(squaresPerRow){
+    deleteGrid();
 
-    for(let i = 0; i < 16; i++){
+    //Create grid container
+    const gridContainer = document.createElement('div');
+    gridContainer.id = 'grid-container';
+   
+    totalNumofSquares = squaresPerRow * squaresPerRow;
+    for(let i = 0; i < totalNumofSquares; i++){
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
 
@@ -18,11 +22,12 @@ function createGrid(){
     document.body.appendChild(gridContainer);
 }
 
-createGrid();
+//Deletes grid if it exists already
+function deleteGrid(){
+    let gridContainer = document.getElementById('grid-container');
+    if(gridContainer){
+        gridContainer.remove();
+    }
+}
 
-// const gridSquares = document.querySelectorAll(".grid-square");
-// gridSquares.forEach(gridSquare => {
-//     gridSquare.addEventListener('mouseover', () => {
-//         gridSquare.classList.add()
-//     })
-// });
+createGrid(4);

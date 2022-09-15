@@ -4,14 +4,14 @@ body {
     align-items: center;
 }
 
-.grid-container,
+#grid-container,
 .grid-square {
     border-style: solid;
     border-color:black;
     box-sizing: border-box;
 }
 
-.grid-container {
+#grid-container {
     height: 640px;
     width: 640px;
     display: flex;

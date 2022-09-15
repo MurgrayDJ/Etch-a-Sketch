@@ -9,9 +9,10 @@
     </head>
     <body>
         <h1>Etch-a-Sketch</h1>
-        <div class="user-question">
+        <div id="user-question">
             <label for="squares-per-row">How many squares per row?</label>
-            <input type="number" id="squares-per-row" min="1" max="100">
+            <input type="number" id="squares-per-row" value="4" min="1" max="100" 
+            onchange="createGrid(this.value)"/>
         </div>
         <!--Grid Container is appended here-->
     </body>
