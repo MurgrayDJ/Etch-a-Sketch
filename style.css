@@ -12,16 +12,8 @@ body {
 }
 
 #grid-container {
-    height: 640px;
-    width: 640px;
     display: flex;
     flex-wrap: wrap;
-}
-
-
-.grid-square {
-    height: 25%;
-    width: 25%;
 }
 
 .grid-square:hover {

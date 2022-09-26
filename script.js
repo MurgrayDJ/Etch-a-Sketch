@@ -10,16 +10,32 @@ function createGrid(squaresPerRow){
     //Create grid container
     const gridContainer = document.createElement('div');
     gridContainer.id = 'grid-container';
+    gridContainer.style.height = "640px";
+    gridContainer.style.width = "640px";
    
     totalNumofSquares = squaresPerRow * squaresPerRow;
     for(let i = 0; i < totalNumofSquares; i++){
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
 
+        const squarePercentage = getSquarePercentage(squaresPerRow, gridContainer);
+        gridSquare.style.height = `${squarePercentage}%`;
+        gridSquare.style.width = `${squarePercentage}%`;
+
         gridContainer.appendChild(gridSquare);
     }
 
     document.body.appendChild(gridContainer);
+}
+
+//Calculates what percentage of the height and width of the grid
+//that each square will use up
+function getSquarePercentage(squaresPerRow, gridContainer){
+    
+    numOfPixelsInGrid = parseInt(gridContainer.style.width);
+    let numOfPixelsInSquares = parseInt(numOfPixelsInGrid) / squaresPerRow;
+    const squarePercentage = 100 * (numOfPixelsInSquares / numOfPixelsInGrid);
+    return squarePercentage;
 }
 
 //Deletes grid if it exists already
