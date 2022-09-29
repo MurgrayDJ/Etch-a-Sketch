@@ -7,7 +7,8 @@ body {
 #grid-container,
 .grid-square {
     border-style: solid;
-    border-color:black;
+    border-color:rgb(247, 243, 243);
+    border-width: thin;
     box-sizing: border-box;
 }
 
