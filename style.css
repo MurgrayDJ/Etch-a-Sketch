@@ -15,6 +15,7 @@ body {
 #grid-container {
     display: flex;
     flex-wrap: wrap;
+    border-color: rgb(194, 193, 193);
 }
 
 #user-question{

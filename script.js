@@ -51,14 +51,38 @@ function designSquares(gridSquare, squarePercentage){
     gridSquare.classList.add('grid-square');
     gridSquare.style.height = `${squarePercentage}%`;
     gridSquare.style.width = `${squarePercentage}%`;
+    
+    
     gridSquare.addEventListener("mouseover", () =>
     {   
-        gridSquare.classList.toggle("colored-square");
+        //gridSquare.classList.toggle("colored-square");
+        changeColor(gridSquare);
     })
     gridSquare.addEventListener("click", () => 
     {
-        gridSquare.classList.toggle("colored-square");
+        //gridSquare.classList.toggle("colored-square");
+        changeColor(gridSquare);
     })
+}
+
+function changeColor(gridSquare){
+    if(!gridSquare.style.backgroundColor){
+        let currentColor = "rgb(" + getRGBValues().toString() + ")";
+        gridSquare.style.backgroundColor = currentColor;
+        gridSquare.style.borderColor = currentColor;
+    }
+    else{
+        gridSquare.style.backgroundColor = "";
+        gridSquare.style.borderColor = "";
+    }
+}
+
+function getRGBValues(){
+    let rgbValues = [];
+    for(let i = 0; i < 3; i++){
+        rgbValues[i] = Math.floor(Math.random() * 256);
+    }
+    return rgbValues;
 }
 
 const clearButton = document.getElementById("clear-button");
