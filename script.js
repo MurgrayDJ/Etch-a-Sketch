@@ -53,8 +53,7 @@ function designSquares(gridSquare, squarePercentage){
     gridSquare.style.width = `${squarePercentage}%`;
     gridSquare.addEventListener("mouseover", () =>
     {   
-        gridSquare.style.backgroundColor = "#FF91AF";
-        gridSquare.style.borderColor = "#FF69B4";
+        gridSquare.classList.toggle("colored-square");
     })
 }
 

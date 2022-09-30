@@ -20,3 +20,8 @@ body {
 .user-question{
     padding-bottom: 25px;
 }
+
+.colored-square{
+    background-color: #FF91AF;
+    border-color: #FF69B4;
+}
