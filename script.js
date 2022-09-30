@@ -55,12 +55,10 @@ function designSquares(gridSquare, squarePercentage){
     
     gridSquare.addEventListener("mouseover", () =>
     {   
-        //gridSquare.classList.toggle("colored-square");
         changeColor(gridSquare);
     })
     gridSquare.addEventListener("click", () => 
     {
-        //gridSquare.classList.toggle("colored-square");
         changeColor(gridSquare);
     })
 }
