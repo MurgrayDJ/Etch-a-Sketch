@@ -57,3 +57,10 @@ function designSquares(gridSquare, squarePercentage){
         gridSquare.style.borderColor = "#FF69B4";
     })
 }
+
+const clearButton = document.getElementById("clear-button");
+const squaresPerRow = document.getElementById("squares-per-row");
+clearButton.addEventListener("click", () => {
+    deleteGrid();
+    createGrid(squaresPerRow.value);
+})
