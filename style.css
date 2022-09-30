@@ -17,8 +17,8 @@ body {
     flex-wrap: wrap;
 }
 
-.user-question{
-    padding-bottom: 25px;
+#user-question{
+    padding-bottom: 10px;
 }
 
 .colored-square{
