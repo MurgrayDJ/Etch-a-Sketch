@@ -55,6 +55,10 @@ function designSquares(gridSquare, squarePercentage){
     {   
         gridSquare.classList.toggle("colored-square");
     })
+    gridSquare.addEventListener("click", () => 
+    {
+        gridSquare.classList.toggle("colored-square");
+    })
 }
 
 const clearButton = document.getElementById("clear-button");
