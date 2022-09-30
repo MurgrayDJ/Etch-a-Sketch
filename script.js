@@ -16,12 +16,10 @@ function createGrid(squaresPerRow){
     totalNumofSquares = squaresPerRow * squaresPerRow;
     for(let i = 0; i < totalNumofSquares; i++){
         const gridSquare = document.createElement('div');
-        gridSquare.classList.add('grid-square');
 
         const squarePercentage = getSquarePercentage(squaresPerRow, gridContainer);
-        gridSquare.style.height = `${squarePercentage}%`;
-        gridSquare.style.width = `${squarePercentage}%`;
-
+        designSquares(gridSquare, squarePercentage);
+        
         gridContainer.appendChild(gridSquare);
     }
 
@@ -47,3 +45,15 @@ function deleteGrid(){
 }
 
 createGrid(4);
+
+//Sets all grid square attributes such as height and width
+function designSquares(gridSquare, squarePercentage){
+    gridSquare.classList.add('grid-square');
+    gridSquare.style.height = `${squarePercentage}%`;
+    gridSquare.style.width = `${squarePercentage}%`;
+    gridSquare.addEventListener("mouseover", () =>
+    {   
+        gridSquare.style.backgroundColor = "#FF91AF";
+        gridSquare.style.borderColor = "#FF69B4";
+    })
+}
