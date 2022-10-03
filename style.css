@@ -2,6 +2,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: linear-gradient(#61bad7, #023760);
+}
+
+h1 {
+    color:#023760;
 }
 
 #grid-container,
