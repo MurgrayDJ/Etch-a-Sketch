@@ -63,6 +63,7 @@ function designSquares(gridSquare, squarePercentage){
     })
 }
 
+//Changes the color of the grid squares
 function changeColor(gridSquare){
     if(!gridSquare.style.backgroundColor){
         let currentColor = "rgb(" + getRGBValues().toString() + ")";
@@ -75,6 +76,7 @@ function changeColor(gridSquare){
     }
 }
 
+//Creates an array of 3 random RGB values (for CSS)
 function getRGBValues(){
     let rgbValues = [];
     for(let i = 0; i < 3; i++){
@@ -83,9 +85,15 @@ function getRGBValues(){
     return rgbValues;
 }
 
+//Clears the grid after the "Clear Grid" button is clicked
 const clearButton = document.getElementById("clear-button");
 const squaresPerRow = document.getElementById("squares-per-row");
 clearButton.addEventListener("click", () => {
     deleteGrid();
+    createGrid(squaresPerRow.value);
+})
+
+const changeButton = document.getElementById("change-button");
+changeButton.addEventListener("click", () => {
     createGrid(squaresPerRow.value);
 })
