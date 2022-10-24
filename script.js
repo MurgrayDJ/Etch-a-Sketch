@@ -2,6 +2,8 @@
 //Date: 9/14/2022
 //Purpose: To emulate a sketchpad/Etch-a-Sketch
 
+createGrid(4);
+
 //Creates a grid container, then creates several grid squares to add to it.
 //Then appends the container with the squares inside to the body of the DOM
 function createGrid(squaresPerRow){
@@ -44,8 +46,6 @@ function deleteGrid(){
     }
 }
 
-createGrid(4);
-
 //Sets all grid square attributes such as height and width
 function designSquares(gridSquare, squarePercentage){
     gridSquare.classList.add('grid-square');
@@ -63,8 +63,11 @@ function designSquares(gridSquare, squarePercentage){
     })
 }
 
+//Changes the color of the grid squares
 function changeColor(gridSquare){
-    if(!gridSquare.style.backgroundColor){
+    const eraserOn = (eraseButton.value == 'true');
+    
+    if(!eraserOn){
         let currentColor = "rgb(" + getRGBValues().toString() + ")";
         gridSquare.style.backgroundColor = currentColor;
         gridSquare.style.borderColor = currentColor;
@@ -75,6 +78,8 @@ function changeColor(gridSquare){
     }
 }
 
+
+//Creates an array of 3 random RGB values (for CSS)
 function getRGBValues(){
     let rgbValues = [];
     for(let i = 0; i < 3; i++){
@@ -83,9 +88,33 @@ function getRGBValues(){
     return rgbValues;
 }
 
+/*********************Event Listeners*************************/
+
+//Clears the grid after the "Clear Grid" button is clicked
 const clearButton = document.getElementById("clear-button");
 const squaresPerRow = document.getElementById("squares-per-row");
 clearButton.addEventListener("click", () => {
     deleteGrid();
     createGrid(squaresPerRow.value);
 })
+
+//Changes the grid only after "Change Grid" button is clicked
+const changeButton = document.getElementById("change-button");
+changeButton.addEventListener("click", () => {
+    createGrid(squaresPerRow.value);
+})
+
+//Toggles boolean value of eraser button
+const eraseButton = document.getElementById("erase-button");
+eraseButton.addEventListener("click", () => {
+    if(eraseButton.value == "false"){
+        eraseButton.value = "true";
+        eraseButton.textContent = "Use Paint";
+    }
+    else {
+        eraseButton.value = "false"
+        eraseButton.textContent = "Use Eraser";
+    }
+})
+
+/*********************Event Listeners*************************/
